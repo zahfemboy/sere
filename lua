@@ -14,7 +14,7 @@ local players        = game:GetService("Players")
 local localPlayer    = players.LocalPlayer
 local mouse          = localPlayer:GetMouse()
 
-local menu           = game:GetObjects("rbxassetid://12702460854")[1]
+getgenv().menu           = game:GetObjects("rbxassetid://12702460854")[1]
 local Tween = loadstring(game:HttpGet("https://pastebin.com/raw/GRtM1ysK"))()
 local notifications1 = {}
 local notifications2 = {}
