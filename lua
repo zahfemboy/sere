@@ -734,30 +734,32 @@ function library:addTab(name)
             end)
         end
 
-            function group:addLabel(text)
-            groupbox.Size += UDim2.new(0, 0, 0, 20)
+function group:addLabel(text)
+    groupbox.Size += UDim2.new(0, 0, 0, 20)
 
-            local labelframe = Instance.new("Frame")
-            labelframe.Name = "labelframe"
-            labelframe.Parent = grouper
-            labelframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            labelframe.BackgroundTransparency = 1
-            labelframe.BorderSizePixel = 0
-            labelframe.Size = UDim2.new(1, 0, 0, 21)
-        
-            local telabel = Instance.new("TextLabel")
-            telabel.Parent = labelframe
-            telabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-            telabel.BackgroundTransparency = 1
-            telabel.BorderSizePixel = 0
-            telabel.Position = UDim2.new(0.02, -1, 0, 0)
-            telabel.Size = UDim2.new(0, 205, 0, 15)
-            telabel.Font = Enum.Font.Code
-            telabel.Text = text
-            telabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-            telabel.TextSize = 13.000
-            telabel.TextXAlignment = "Left"
-        end
+    local labelframe = Instance.new("Frame")
+    labelframe.Name = "labelframe"
+    labelframe.Parent = grouper
+    labelframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    labelframe.BackgroundTransparency = 1
+    labelframe.BorderSizePixel = 0
+    labelframe.Size = UDim2.new(1, 0, 0, 21)
+
+    local telabel = Instance.new("TextLabel")
+    telabel.Parent = labelframe
+    telabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    telabel.BackgroundTransparency = 1
+    telabel.BorderSizePixel = 0
+    telabel.Position = UDim2.new(0.02, -1, 0, 0)
+    telabel.Size = UDim2.new(0, 205, 0, 15)
+    telabel.Font = Enum.Font.Code
+    telabel.Text = text
+    telabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    telabel.TextSize = 13.000
+    telabel.TextXAlignment = Enum.TextXAlignment.Left
+
+    return telabel 
+end
 
         function group:addSlider(args)
             if not args.flag or not args.max then return nil end
