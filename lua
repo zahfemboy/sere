@@ -23,7 +23,7 @@ menu.Parent          = game:GetService("CoreGui")
 local library = {
     cheatname = "zirec.lol";
     ext = "zirec.lol";
-    gamename = "trident survival (2023)";
+    gamename = "booga booga";
     colorpicking = false;
     tabbuttons = {};
     tabs = {};
@@ -44,7 +44,6 @@ local library = {
         Enum.UserInputType.MouseMovement
     }
 }
-menu.bg.pre.Text = library.cheatname .. " | " .. library.gamename 
 
 
 local ColorPicker_Gradients = {
