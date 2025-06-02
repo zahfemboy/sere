@@ -1,5 +1,5 @@
-if not isfile("zirec.lol") then
-    makefolder("zirec.lol")
+if not isfile("vertical") then
+    makefolder("vertical")
 end
 
 
@@ -21,9 +21,6 @@ local notifications2 = {}
 menu.bg.Position     = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
 menu.Parent          = game:GetService("CoreGui")
 local library = {
-    cheatname = "zirec.lol";
-    ext = "zirec.lol";
-    gamename = "booga booga";
     colorpicking = false;
     tabbuttons = {};
     tabs = {};
@@ -1748,7 +1745,7 @@ function library:createConfig()
             jig[i] = v
         end
     end
-    writefile("zah ware/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+    writefile("vertical/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
     library:refreshConfigs()
 end
 
@@ -1765,16 +1762,16 @@ function library:saveConfig()
             jig[i] = v
         end
     end
-    writefile("zah ware/"..name,game:GetService("HttpService"):JSONEncode(jig))
+    writefile("vertical/"..name,game:GetService("HttpService"):JSONEncode(jig))
     library:refreshConfigs()
 end
 
 function library:loadConfig()
     local name = library.flags["selected_config"]
-    if not isfile("zah ware/"..name) then
+    if not isfile("vertical/"..name) then
         return
     end
-    local config = game:GetService("HttpService"):JSONDecode(readfile("zah ware/"..name))
+    local config = game:GetService("HttpService"):JSONDecode(readfile("vertical/"..name))
     for i,v in next, library.options do
         spawn(function()pcall(function()
             if config[i] then
@@ -1811,7 +1808,7 @@ function library:refreshConfigs()
         if option.type == "cfg" then
             if typeof(option.refresh) == "function" then
                 local configs = {}
-                for i,v in ipairs(listfiles("zah ware")) do
+                for i,v in ipairs(listfiles("vertical")) do
                     local name = v:match("^.+\\(.+)$")
                     table.insert(configs, name)
                 end
@@ -1822,8 +1819,8 @@ function library:refreshConfigs()
 end
 
 function library:deleteConfig()
-    if isfile("zah ware/"..library.flags["selected_config"]) then
-        delfile("zah ware/"..library.flags["selected_config"])
+    if isfile("vertical/"..library.flags["selected_config"]) then
+        delfile("vertical/"..library.flags["selected_config"])
         library:refreshConfigs()
     end
 end
