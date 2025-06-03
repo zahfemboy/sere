@@ -60,7 +60,7 @@ local tabviewer = menu.bg.bg.bg.bg.tabbuttons
 
 
 inputService.InputEnded:Connect(function(key) -- hide
-    if key.KeyCode == Enum.KeyCode.End then
+    if key.KeyCode == library.menubind then
         menu.Enabled = not menu.Enabled
         library.scrolling = false
         library.colorpicking = false
