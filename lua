@@ -59,8 +59,8 @@ local tabholder = menu.bg.bg.bg.bg.main.group
 local tabviewer = menu.bg.bg.bg.bg.tabbuttons
 
 
-inputService.InputEnded:Connect(function(key) -- hide
-    if key.KeyCode == library.menubind then
+inputService.InputBegan:Connect(function(i, g)
+    if not g and i.KeyCode == library.menubind then
         menu.Enabled = not menu.Enabled
         library.scrolling = false
         library.colorpicking = false
@@ -69,6 +69,7 @@ inputService.InputEnded:Connect(function(key) -- hide
         end
     end
 end)
+
 
 local keyNames = {
     [Enum.KeyCode.LeftAlt] = 'LALT';
